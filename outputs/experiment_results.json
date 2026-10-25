@@ -1,0 +1,166 @@
+{
+  "results_schema_version": 1,
+  "analysis_run_id": "773a7e55da4fee89",
+  "analysis_code_version": "1.1.0",
+  "project": "Rewards Value Realization & Incrementality Lab",
+  "synthetic_data_only": true,
+  "generation_seed": 20261022,
+  "requested_member_count": 20000,
+  "synthetic_dgp_parameters": {
+    "planted_exposed_member_transaction_intensity_multiplier": 1.15,
+    "campaign_exposure_probability_among_eligible_treatment_member_months": 0.8
+  },
+  "input_manifest": {
+    "raw_benefit_events.csv": {
+      "rows": 60000,
+      "sha256": "04de78f1519e081283916c5413fa9e17188cf2109b64e2d1c7e14d1f675a4244"
+    },
+    "raw_market_context.csv": {
+      "rows": 6,
+      "sha256": "58f39ad769cd67532350fd25b4f5f5d9cdb4e9e180270e376304e65452e1751b"
+    },
+    "raw_member_month.csv": {
+      "rows": 120000,
+      "sha256": "5e54a63494522437df6b64aaca9678e6da31263b93d9aa2c2be87f27c3b710fa"
+    },
+    "raw_members.csv": {
+      "rows": 20000,
+      "sha256": "ba59e292a415789f2ae83c5c46bbea008473e86e02320ea95e9b1b9a56948157"
+    }
+  },
+  "analysis_population_n": 18866,
+  "secondary_outcomes_are_exploratory": true,
+  "analysis_population": "Members eligible and randomized on 2026-04-01; members remain in ITT regardless of subsequent inactivity/attrition.",
+  "primary_estimand": "Treatment minus control mean cumulative contribution per randomized member during Apr-Jun 2026, including zero-transaction months and all modeled costs.",
+  "primary_result": {
+    "description": "Cumulative Apr-Jun contribution per randomized member ($)",
+    "n_treatment": 9454,
+    "n_control": 9412,
+    "mean_treatment": 31.94488258938016,
+    "mean_control": 29.731395027624313,
+    "difference_treatment_minus_control": 2.213487561755848,
+    "standard_error_welch": 0.35780964070222,
+    "ci95_low": 1.5121484499114122,
+    "ci95_high": 2.9148266736002837,
+    "p_value_two_sided": 6.289781370350495e-10,
+    "p_value_underflow_floor_applied": false,
+    "degrees_freedom_welch": 18820.919730845213
+  },
+  "outcomes": {
+    "post_contribution": {
+      "description": "Cumulative Apr-Jun contribution per randomized member ($)",
+      "n_treatment": 9454,
+      "n_control": 9412,
+      "mean_treatment": 31.94488258938016,
+      "mean_control": 29.731395027624313,
+      "difference_treatment_minus_control": 2.213487561755848,
+      "standard_error_welch": 0.35780964070222,
+      "ci95_low": 1.5121484499114122,
+      "ci95_high": 2.9148266736002837,
+      "p_value_two_sided": 6.289781370350495e-10,
+      "p_value_underflow_floor_applied": false,
+      "degrees_freedom_welch": 18820.919730845213
+    },
+    "post_transactions": {
+      "description": "Cumulative Apr-Jun transactions per randomized member",
+      "n_treatment": 9454,
+      "n_control": 9412,
+      "mean_treatment": 9.779352654960864,
+      "mean_control": 8.881002974925627,
+      "difference_treatment_minus_control": 0.8983496800352366,
+      "standard_error_welch": 0.10116322856806527,
+      "ci95_low": 0.7000606433104326,
+      "ci95_high": 1.0966387167600407,
+      "p_value_two_sided": 7.262162513599648e-19,
+      "p_value_underflow_floor_applied": false,
+      "degrees_freedom_welch": 18820.464178219467
+    },
+    "post_net_sales": {
+      "description": "Cumulative Apr-Jun net sales per randomized member ($)",
+      "n_treatment": 9454,
+      "n_control": 9412,
+      "mean_treatment": 92.77753331922996,
+      "mean_control": 83.99868147046324,
+      "difference_treatment_minus_control": 8.77885184876672,
+      "standard_error_welch": 1.0037807095423839,
+      "ci95_low": 6.811351167971192,
+      "ci95_high": 10.746352529562248,
+      "p_value_two_sided": 2.3981437112878295e-18,
+      "p_value_underflow_floor_applied": false,
+      "degrees_freedom_welch": 18804.157437259386
+    },
+    "post_purchaser": {
+      "description": "Share of randomized members with >=1 Apr-Jun transaction",
+      "n_treatment": 9454,
+      "n_control": 9412,
+      "mean_treatment": 0.9866723080177703,
+      "mean_control": 0.9837441563960901,
+      "difference_treatment_minus_control": 0.0029281516216801418,
+      "standard_error_welch": 0.0017579374940818462,
+      "ci95_low": -0.0005175659374322653,
+      "ci95_high": 0.006373869180792548,
+      "p_value_two_sided": 0.09579504445942548,
+      "p_value_underflow_floor_applied": false,
+      "degrees_freedom_welch": 18669.990014438787
+    },
+    "post_benefit_cost": {
+      "description": "Cumulative Apr-Jun benefit cost per randomized member ($)",
+      "n_treatment": 9454,
+      "n_control": 9412,
+      "mean_treatment": 0.7250803892532262,
+      "mean_control": 0.13390246493837654,
+      "difference_treatment_minus_control": 0.5911779243148496,
+      "standard_error_welch": 0.008925653043511351,
+      "ci95_low": 0.5736824120808082,
+      "ci95_high": 0.6086734365488911,
+      "p_value_two_sided": 1e-300,
+      "p_value_underflow_floor_applied": true,
+      "degrees_freedom_welch": 13629.082896067472
+    }
+  },
+  "adjusted_sensitivity_model": {
+    "formula": "post_contribution ~ treatment + pre_contribution + tier + acquisition_channel",
+    "covariance": "HC3 robust",
+    "n": 18866,
+    "r_squared": 0.2425221868519567,
+    "treatment_coefficient": 2.0389132793097295,
+    "standard_error": 0.31188738685700096,
+    "ci95_low": 1.4276252338376967,
+    "ci95_high": 2.6502013247817624,
+    "p_value": 6.262339880140991e-11,
+    "interpretation": "Adjusted sensitivity analysis; primary estimate is unadjusted randomized ITT difference."
+  },
+  "benefit_funnel_descriptive_only": {
+    "CONTROL": {
+      "members": 9412,
+      "eligible_events": 27674,
+      "exposed_events": 0,
+      "used_events_total_including_unexposed_organic_use": 1257,
+      "exposed_and_used_events": 0,
+      "unexposed_used_events": 1257,
+      "exposure_per_eligible_event": 0.0,
+      "use_per_exposed_event": null,
+      "use_per_eligible_event": 0.045421695454216954,
+      "benefit_cost_total": 1260.29
+    },
+    "TREATMENT": {
+      "members": 9454,
+      "eligible_events": 27809,
+      "exposed_events": 22320,
+      "used_events_total_including_unexposed_organic_use": 6881,
+      "exposed_and_used_events": 6621,
+      "unexposed_used_events": 260,
+      "exposure_per_eligible_event": 0.8026178575281384,
+      "use_per_exposed_event": 0.29663978494623655,
+      "use_per_eligible_event": 0.24743787982307885,
+      "benefit_cost_total": 6854.91
+    }
+  },
+  "causal_guardrails": [
+    "Use assignment group (ITT), not actual exposure or redemption, for the primary causal comparison.",
+    "Do not interpret synthetic estimates as Starbucks actual performance.",
+    "A non-significant estimate is not proof of no effect.",
+    "Benefit funnel metrics are descriptive and do not establish incrementality.",
+    "Secondary outcomes are exploratory; the primary estimand is cumulative post-period contribution per randomized member."
+  ]
+}
