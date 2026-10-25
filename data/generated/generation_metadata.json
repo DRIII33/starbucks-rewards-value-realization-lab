@@ -1,0 +1,17 @@
+{
+  "metadata_schema_version": 1,
+  "generator_version": "1.1.0",
+  "seed": 20261022,
+  "n_members": 20000,
+  "months": [
+    "2026-01-01",
+    "2026-02-01",
+    "2026-03-01",
+    "2026-04-01",
+    "2026-05-01",
+    "2026-06-01"
+  ],
+  "synthetic_planted_exposed_member_transaction_intensity_multiplier": 1.15,
+  "synthetic_campaign_exposure_probability_among_eligible_treatment_member_months": 0.8,
+  "warning": "Synthetic data only. Planted parameter is not a result or Starbucks fact; ITT estimate is diluted by exposure and attrition."
+}
